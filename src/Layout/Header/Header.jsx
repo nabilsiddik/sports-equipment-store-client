@@ -1,20 +1,13 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import Logo from '../../Components/Logo/Logo'
-import SearchCourse from '../../Components/SearchCourse/SearchCourse'
-import { FaRegUserCircle } from "react-icons/fa";
-import { MdOutlineShoppingCart } from "react-icons/md";
-import { shopContext } from '../../Contexts/ShopContext/ShopContext';
-import { authContext } from './../../Contexts/AuthContex/AuthContext';
+import { authContext } from '../../Context/AuthContex/AuthContext';
 import './header.css'
 import Swal from 'sweetalert2';
-import { courseContext } from '../../Contexts/CourseContext/CourseContext';
+import { FiShoppingCart } from "react-icons/fi";
 
 const Header = () => {
 
-    const { cart } = useContext(shopContext)
     const { user, userSignOut } = useContext(authContext)
-    const {cartProducts} = useContext(courseContext)
 
     const handleSignOut = () => {
         userSignOut()
@@ -41,8 +34,6 @@ const Header = () => {
         <header id='header' className='border-b'>
             <div className="container lg:flex items-center justify-between py-5">
                 <div className="logo_and_serach flex items-center gap-5">
-                    <Logo width={'100px'} />
-                    {/* <SearchCourse placeholder='Search course...' /> */}
                 </div>
 
                 <nav className="menu">
@@ -68,11 +59,10 @@ const Header = () => {
                         </div>
                     }
 
-
                     <Link to='/cart'>
                         <div className='relative'>
-                            <MdOutlineShoppingCart className='text-2xl' />
-                            <div className="cart_count absolute w-[26px] h-[26px] bg-yellow-500 font-bold rounded-full flex items-center justify-center top-[-23px] right-[-20px] text-sm">{cartProducts.length}</div>
+                            <FiShoppingCart className='text-2xl' />
+                            <div className="cart_count absolute w-[26px] h-[26px] bg-yellow-500 font-bold rounded-full flex items-center justify-center top-[-23px] right-[-20px] text-sm">{}</div>
                         </div>
                     </Link>
                 </div>

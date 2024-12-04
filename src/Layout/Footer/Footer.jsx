@@ -1,12 +1,11 @@
 import React from 'react'
-import footerLogo from '../../assets/iSchool-footer.png'
 
 const Footer = () => {
     return (
         <div className="bg-neutral">
             <footer className="footer text-neutral-content p-10 container py-20 text-lg">
                 <div>
-                    <img src={footerLogo} alt="logo" />
+                    <img src='' alt="logo" />
                 </div>
                 <nav>
                     <h6 className="footer-title">Company</h6>
