@@ -34,20 +34,25 @@ const Header = () => {
         <header id='header' className='border-b'>
             <div className="container lg:flex items-center justify-between py-5">
                 <div className="logo_and_serach flex items-center gap-5">
+                    <h2 className='font-bold text-4xl'>EquiSports</h2>
                 </div>
 
                 <nav className="menu">
                     <ul className='flex items-center gap-5 text-lg'>
                         <NavLink to='/'>Home</NavLink>
-
-                        {user?.email === 'nabilsiddik90@gmail.com' && <NavLink to={'/admin-dashboard'}>Dashboard</NavLink>}
+                        <NavLink to='/sports-equipment'>Sports Equipment</NavLink>
+                        {user?.email && 
+                            <>
+                                <NavLink to='/add-equipment'>Add Equipment</NavLink>
+                                <NavLink to='/my-equipment'>My Equipment</NavLink>
+                            </>
+                        }
                         {user?.email && <NavLink to={'/profile'}>Profile</NavLink>}
-
                     </ul>
                 </nav>
                 <div className="icons flex items-center gap-3">
                     {user?.email && <button onClick={handleSignOut} className='btn bg-yellow-500 font-bold text-lg'>Log Out</button>}
-                    {!user?.email && <NavLink className='btn bg-yellow-500 font-bold text-lg' to={'/login'}>Login</NavLink>}
+                    {!user?.email && <NavLink className='btn bg-yellow-500 font-bold text-lg' to={'/login'}>Login / Register</NavLink>}
 
                     {user?.email &&
                         <div className="tooltip tooltip-bottom" data-tip={user?.email && user.displayName}>

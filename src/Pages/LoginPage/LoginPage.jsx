@@ -70,13 +70,13 @@ const LoginPage = () => {
                             <form onSubmit={handleLogin} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text">Email <span className='text-red-500'> *</span></span>
                                     </label>
                                     <input name='email' type="email" placeholder="email" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Password</span>
+                                        <span className="label-text">Password <span className='text-red-500'> *</span></span>
                                     </label>
                                     <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                                     <label className="label block">
@@ -84,7 +84,7 @@ const LoginPage = () => {
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Login</button>
+                                    <button className="btn bg-yellow-500 text-xl">Login</button>
                                 </div>
                             </form>
                         </div>

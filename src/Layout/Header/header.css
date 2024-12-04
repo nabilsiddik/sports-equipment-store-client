@@ -1,5 +1,11 @@
-#header .menu a.active {
+#header .menu a.active{
+    position: relative;
+}
+#header .menu a.active::before {
+    width: 100%;
+    content: '';
     background-color: #F2B400;
-    padding: 10px 20px;
-    border-radius: 5px;
+    height: 5px;
+    position: absolute;
+    top: 100%;
 }

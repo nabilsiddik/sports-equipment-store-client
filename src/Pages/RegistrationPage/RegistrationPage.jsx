@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { authContext } from '../../Contexts/AuthContex/AuthContext'
 import { FaGoogle } from "react-icons/fa6"
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
+import { authContext } from '../../Context/AuthContex/AuthContext'
 
 const RegistrationPage = () => {
 
@@ -14,20 +14,21 @@ const RegistrationPage = () => {
         const name = form.name.value
         const photoUrl = form.photoUrl.value
         const password = form.password.value
-        const confirmPassword = form.ConfirmPassword.value
         const email = form.email.value
 
-        if (name === '' || photoUrl === '' || password === '' || confirmPassword === '' || email === '') {
+        const passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
+
+        if (name === '' || photoUrl === '' || password === '' || email === '') {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
                 text: "Please fill out the required fields!"
             })
-        } else if (password !== confirmPassword) {
+        } else if (!passwordRegEx.test(password)) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Password is not matching! Try again."
+                text: "Please enter a valid password"
             })
         } else {
             createUser(email, password, name, photoUrl)
@@ -92,39 +93,33 @@ const RegistrationPage = () => {
                             <form onSubmit={handleRegistration} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Name</span>
+                                        <span className="label-text">Name<span className='text-red-600'> *</span></span>
                                     </label>
                                     <input name='name' type="text" placeholder="name" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Photo URL</span>
+                                        <span className="label-text">Photo URL <span className='text-red-600'> *</span></span>
                                     </label>
                                     <input name='photoUrl' type="text" placeholder="Photo URL" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text">Email <span className='text-red-600'> *</span></span>
                                     </label>
                                     <input name='email' type="email" placeholder="email" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Password</span>
+                                        <span className="label-text">Password <span className='text-red-600'> *</span></span>
                                     </label>
-                                    <input name='password' type="password" placeholder="password" className="input input-bordered"  />
+                                    <input name='password' type="password" placeholder="password" className="input input-bordered" />
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Confirm Password</span>
-                                    </label>
-                                    <input name='ConfirmPassword' type="password" placeholder="password" className="input input-bordered" />
-                                    <label className="label block">
-                                        Already have na account? <Link className='underline' to="/login">Login Now</Link>
-                                    </label>
-                                </div>
+                                <label className="label block">
+                                    Already have an account? <Link className='underline' to="/login">Login Now</Link>
+                                </label>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Login</button>
+                                    <button className="btn text-xl bg-yellow-500 ">Registration</button>
                                 </div>
                             </form>
                         </div>
