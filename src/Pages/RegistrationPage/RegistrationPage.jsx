@@ -6,7 +6,7 @@ import { authContext } from '../../Context/AuthContex/AuthContext'
 
 const RegistrationPage = () => {
 
-    const { createUser, signInWithGoogle, profileUpdate } = useContext(authContext)
+    const { createUser, signInWithGoogle, profileUpdate, user } = useContext(authContext)
 
     const handleRegistration = (e) => {
         e.preventDefault()
@@ -36,11 +36,12 @@ const RegistrationPage = () => {
                     console.log(userCredential.user)
                     const createdAt = userCredential?.user?.metadata?.creationTime
                     const newUser = { name, photoUrl, email, password, createdAt }
+                    
                     // Save new user info to the databas
                     fetch('http://localhost:5000/users', {
                         method: 'POST',
                         headers: {
-                            'content-type': 'application/json'
+                            'Content-Type': 'application/json'
                         },
                         body: JSON.stringify(newUser)
                     })
