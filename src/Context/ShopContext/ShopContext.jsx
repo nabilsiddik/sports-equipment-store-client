@@ -12,6 +12,7 @@ const ShopContext = ({children}) => {
     return desc.length < charLength ? desc :  desc.substring(0, charLength) + ' ...'
   }
 
+
   // Fetch all equipment
   useEffect(()=>{
     fetch('http://localhost:5000/equipment')

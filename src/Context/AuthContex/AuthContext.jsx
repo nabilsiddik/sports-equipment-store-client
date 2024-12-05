@@ -97,7 +97,7 @@ const AuthContext = ({ children }) => {
         user,
         loading,
         setLoading,
-        userSignOut,
+        userSignOut
     }
 
     return (
