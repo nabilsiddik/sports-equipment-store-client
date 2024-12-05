@@ -1,7 +1,5 @@
 import React, { useContext } from 'react'
 import { shopContext } from '../../Context/ShopContext/ShopContext'
-import { FaStar } from "react-icons/fa";
-import { FaRegStar } from "react-icons/fa";
 import StarRatings from 'react-star-ratings';
 
 const ProductCard = ({ equipment }) => {

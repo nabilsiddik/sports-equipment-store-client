@@ -24,14 +24,17 @@ const SportsEquipmentPage = () => {
             </thead>
             <tbody>
               {allEquipment.length > 0 && allEquipment.map((item, index) => {
-                const { equipmentName,
+                const { 
+                  _id,
+                  equipmentName,
                   equipmentImageUrl,
                   equipmentCategory,
                   equipmentDescription,
                   equipmentPrice,
                   equipmentRating,
                   equipmentProcessingTime,
-                  equipmentQuantity } = item
+                  equipmentQuantity 
+                } = item
                 return <tr className='bg-yellow-500 text-black'>
                   <td>
                     <div class="flex items-center gap-3">
@@ -55,7 +58,7 @@ const SportsEquipmentPage = () => {
                   </td>
                   <td className='text-lg'>{equipmentCategory}</td>
                   <th>
-                    <Link to='/equipment-details' class="btn bg-error text-white btn-lg">details</Link>
+                    <Link to={`/equipment-details/${_id}`} class="btn bg-error text-white btn-lg">details</Link>
                   </th>
                 </tr>
               })}

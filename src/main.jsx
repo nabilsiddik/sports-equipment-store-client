@@ -11,6 +11,7 @@ import AddEquipmentPage from './Pages/AddEquipmentPage/AddEquipmentPage';
 import MyEquipmentPage from './Pages/MyEquipmentPage/MyEquipmentPage';
 import PrivateRoute from './Routes/PrivateRoute/PrivateRoute';
 import ShopContext from './Context/ShopContext/ShopContext';
+import EquipmentDetailsPage from './Pages/EquipmentDetailsPage/EquipmentDetailsPage';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,13 @@ const router = createBrowserRouter([
       {
         path: '/sports-equipment',
         element: <SportsEquipmentPage/>
+      },
+      {
+        path: 'equipment-details/:id',
+        element: <PrivateRoute>
+          <EquipmentDetailsPage/>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/equipment/${params.id}`)
       },
       {
         path: '/add-equipment',
