@@ -1,13 +1,13 @@
 import React from 'react'
-import slide1 from '../../assets/slide-1.jpeg'
-import slide2 from '../../assets/slide-2.jpeg'
-import slide3 from '../../assets/slide-3.jpeg'
-import slide4 from '../../assets/slide-4.jpeg'
+// import slide1 from '../../assets/slide-1.jpeg'
+// import slide2 from '../../assets/slide-2.jpeg'
+// import slide3 from '../../assets/slide-3.jpeg'
+// import slide4 from '../../assets/slide-4.jpeg'
 
 const Slider = () => {
     return (
         <div className="carousel w-full">
-            <div id="slide1" className="carousel-item relative w-full">
+            {/* <div id="slide1" className="carousel-item relative w-full">
                 <img
                     src={slide1}
                     className="w-full" />
@@ -42,7 +42,7 @@ const Slider = () => {
                     <a href="#slide3" className="btn btn-circle">❮</a>
                     <a href="#slide1" className="btn btn-circle">❯</a>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

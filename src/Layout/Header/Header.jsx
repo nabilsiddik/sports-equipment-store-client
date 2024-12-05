@@ -32,7 +32,7 @@ const Header = () => {
 
     return (
         <header id='header' className='border-b'>
-            <div className="container lg:flex items-center justify-between py-5">
+            <div className="container flex flex-col gap-5 lg:flex-row items-center justify-between py-5">
                 <div className="logo_and_serach flex items-center gap-5">
                     <h2 className='font-bold text-4xl'>EquiSports</h2>
                 </div>

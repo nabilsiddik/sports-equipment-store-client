@@ -10,6 +10,7 @@ import SportsEquipmentPage from './Pages/SportsEquipmentPage/SportsEquipmentPage
 import AddEquipmentPage from './Pages/AddEquipmentPage/AddEquipmentPage';
 import MyEquipmentPage from './Pages/MyEquipmentPage/MyEquipmentPage';
 import PrivateRoute from './Routes/PrivateRoute/PrivateRoute';
+import ShopContext from './Context/ShopContext/ShopContext';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <AuthContext>
-    <RouterProvider router = {router}></RouterProvider>
+    <ShopContext>
+      <RouterProvider router = {router}></RouterProvider>
+    </ShopContext>
   </AuthContext>,
 )
