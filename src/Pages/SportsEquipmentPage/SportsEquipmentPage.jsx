@@ -1,16 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Heading from '../../Components/Heading/Heading'
 import { shopContext } from '../../Context/ShopContext/ShopContext'
 import { Link } from 'react-router-dom'
 
 const SportsEquipmentPage = () => {
 
-  const { allEquipment } = useContext(shopContext)
+  const { allEquipment, setAllEquipment } = useContext(shopContext)
+
+  const handleSortByPrice = () => {
+    const sorted = [...allEquipment].sort((a,b) => a.equipmentPrice - b.equipmentPrice)
+    setAllEquipment(sorted)
+  }
 
   return (
     <div id='sports_equipment_page'>
       <div className="container py-10">
-        <Heading title="All Sports Equipment" />
+        <div className="flex items-center justify-between mb-5">
+          <Heading title="All Sports Equipment" />
+          <button onClick={handleSortByPrice} className='btn bg-green-600 font-bold text-lg'>Sort By Price</button>
+        </div>
 
         <div className="display_all_equipment">
           <table className="table table-lg">
@@ -24,7 +32,7 @@ const SportsEquipmentPage = () => {
             </thead>
             <tbody>
               {allEquipment.length > 0 && allEquipment.map((item, index) => {
-                const { 
+                const {
                   _id,
                   equipmentName,
                   equipmentImageUrl,
@@ -33,7 +41,7 @@ const SportsEquipmentPage = () => {
                   equipmentPrice,
                   equipmentRating,
                   equipmentProcessingTime,
-                  equipmentQuantity 
+                  equipmentQuantity
                 } = item
                 return <tr key={item._id} className='bg-yellow-500 text-black'>
                   <td>
