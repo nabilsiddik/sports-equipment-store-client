@@ -47,7 +47,6 @@ const Header = () => {
                                 <NavLink to='/my-equipment'>My Equipment</NavLink>
                             </>
                         }
-                        {user?.email && <NavLink to={'/profile'}>Profile</NavLink>}
                     </ul>
                 </nav>
                 <div className="icons flex items-center gap-3">
@@ -63,13 +62,6 @@ const Header = () => {
                             </div>
                         </div>
                     }
-
-                    <Link to='/cart'>
-                        <div className='relative'>
-                            <FiShoppingCart className='text-2xl' />
-                            <div className="cart_count absolute w-[26px] h-[26px] bg-yellow-500 font-bold rounded-full flex items-center justify-center top-[-23px] right-[-20px] text-sm">{}</div>
-                        </div>
-                    </Link>
                 </div>
             </div>
         </header>

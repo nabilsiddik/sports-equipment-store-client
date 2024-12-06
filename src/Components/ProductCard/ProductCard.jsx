@@ -1,10 +1,15 @@
 import React, { useContext } from 'react'
 import { shopContext } from '../../Context/ShopContext/ShopContext'
 import StarRatings from 'react-star-ratings';
+import { Link } from 'react-router-dom';
+import { authContext } from '../../Context/AuthContex/AuthContext';
 
 const ProductCard = ({ equipment }) => {
 
+    const {user} = useContext(authContext)
+
     const {
+        _id,
         equipmentName,
         equipmentImageUrl,
         equipmentCategory,
@@ -19,8 +24,8 @@ const ProductCard = ({ equipment }) => {
 
     return (
         <div id='product_card'>
-            <div className="card card-compact bg-base-100 shadow-xl">
-                <figure>
+            <div className="card card-compact bg-base-100 shadow-xl h-[570px]">
+                <figure className='h-[570px]'>
                     <img src={equipmentImageUrl ? equipmentImageUrl : 'https://placehold.co/600x400'} />
                 </figure>
                 <div className="card-body">
@@ -42,7 +47,7 @@ const ProductCard = ({ equipment }) => {
                     </div>
 
                     <div className="card-actions justify-end mt-2">
-                        <button className="btn bg-yellow-500 font-bold text-lg w-full">Add Equipment</button>
+                        <Link to={user?.email ? `equipment-details/${_id}` : '/login'} className="btn bg-yellow-500 font-bold text-lg w-full">View Equipment</Link>
                     </div>
                 </div>
             </div>

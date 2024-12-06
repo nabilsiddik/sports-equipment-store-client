@@ -27,6 +27,7 @@ const ShopContext = ({children}) => {
   
   const shopContextValue = {
     allEquipment,
+    setAllEquipment,
     shortDescription
   }
 

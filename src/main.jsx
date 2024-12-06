@@ -12,11 +12,14 @@ import MyEquipmentPage from './Pages/MyEquipmentPage/MyEquipmentPage';
 import PrivateRoute from './Routes/PrivateRoute/PrivateRoute';
 import ShopContext from './Context/ShopContext/ShopContext';
 import EquipmentDetailsPage from './Pages/EquipmentDetailsPage/EquipmentDetailsPage';
+import UpdateEquipment from './Components/UpdateEquipment/UpdateEquipment';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: '/',
@@ -44,6 +47,13 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <MyEquipmentPage/>
         </PrivateRoute>
+      },
+      {
+        path: '/update-equipment/:id',
+        element: <PrivateRoute>
+          <UpdateEquipment/>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/equipment/${params.id}`)
       },
       {
         path: '/registration',

@@ -13,7 +13,7 @@ const SportsEquipmentPage = () => {
         <Heading title="All Sports Equipment" />
 
         <div className="display_all_equipment">
-          <table class="table table-lg">
+          <table className="table table-lg">
             <thead>
               <tr className='text-black text-lg bg-green-600'>
                 <th>Name/Price</th>
@@ -35,30 +35,30 @@ const SportsEquipmentPage = () => {
                   equipmentProcessingTime,
                   equipmentQuantity 
                 } = item
-                return <tr className='bg-yellow-500 text-black'>
+                return <tr key={item._id} className='bg-yellow-500 text-black'>
                   <td>
-                    <div class="flex items-center gap-3">
-                      <div class="avatar">
-                        <div class="mask mask-squircle h-12 w-12">
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle h-12 w-12">
                           <img
                             src={equipmentImageUrl}
                             alt="Avatar Tailwind CSS Component" />
                         </div>
                       </div>
                       <div>
-                        <div class="font-bold text-lg">{equipmentName}</div>
-                        <div class="text-sm opacity-50 font-bold">BDT {equipmentPrice}</div>
+                        <div className="font-bold text-lg">{equipmentName}</div>
+                        <div className="text-sm opacity-50 font-bold">BDT {equipmentPrice}</div>
                       </div>
                     </div>
                   </td>
                   <td className='text-lg'>
                     {equipmentQuantity} available in stock
                     <br />
-                    <span class="badge badge-ghost badge-lg">Have a {equipmentRating} Star Rating</span>
+                    <span className="badge badge-ghost badge-lg">Have a {equipmentRating} Star Rating</span>
                   </td>
                   <td className='text-lg'>{equipmentCategory}</td>
                   <th>
-                    <Link to={`/equipment-details/${_id}`} class="btn bg-error text-white btn-lg">details</Link>
+                    <Link to={`/equipment-details/${_id}`} className="btn bg-error text-white btn-lg">details</Link>
                   </th>
                 </tr>
               })}
