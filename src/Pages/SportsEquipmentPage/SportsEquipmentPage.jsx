@@ -15,15 +15,15 @@ const SportsEquipmentPage = () => {
   return (
     <div id='sports_equipment_page'>
       <div className="container py-10">
-        <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center justify-between mb-5 mt-10">
           <Heading title="All Sports Equipment" />
           <button onClick={handleSortByPrice} className='btn bg-green-600 font-bold text-lg'>Sort By Price</button>
         </div>
 
         <div className="display_all_equipment">
-          <table className="table table-lg">
-            <thead>
-              <tr className='text-black text-lg bg-green-600 dark:bg-darklight dark:text-white'>
+          <table className="table table-lg flex items-center">
+            <thead className='hidden md:block'>
+              <tr className='text-black text-lg bg-green-600 dark:bg-darklight dark:text-white flex justify-between flex-col md:flex-row'>
                 <th>Name/Price</th>
                 <th>Stock/Rating</th>
                 <th>Category</th>
@@ -43,7 +43,7 @@ const SportsEquipmentPage = () => {
                   equipmentProcessingTime,
                   equipmentQuantity
                 } = item
-                return <tr key={item._id} className='bg-yellow-500 text-black dark:bg-darklight dark:text-white'>
+                return <tr key={item._id} className='bg-yellow-500 text-black dark:bg-darklight dark:text-white flex items-center justify-between flex-col md:flex-row'>
                   <td>
                     <div className="flex items-center gap-3">
                       <div className="avatar">

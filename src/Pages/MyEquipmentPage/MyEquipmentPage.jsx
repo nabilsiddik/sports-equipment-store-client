@@ -30,7 +30,9 @@ const MyEquipmentPage = () => {
   return (
     <div id='my_equipment_page'>
       <div className="container py-10">
-        <Heading title = 'My Euipment'/>
+        <div className="mt-10">
+          <Heading title='My Euipment' />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {currentUserEquipment.length > 0 && currentUserEquipment.map((equipment) => {
             return <MyEquipmentCard key={equipment._id} equipment={equipment} />

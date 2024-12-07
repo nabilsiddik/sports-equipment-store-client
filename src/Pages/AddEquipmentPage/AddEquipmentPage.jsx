@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import MyEquipmentPage from './../MyEquipmentPage/MyEquipmentPage';
 import { authContext } from '../../Context/AuthContex/AuthContext';
 import Swal from 'sweetalert2';
 import { shopContext } from '../../Context/ShopContext/ShopContext';
+
 
 const AddEquipmentPage = () => {
 
@@ -94,8 +95,8 @@ const AddEquipmentPage = () => {
       <div className="container py-10">
         <h1 className='font-bold text-3xl text-center mb-5'>Add Equipment</h1>
 
-        <div className="add_equipment_form w-11/12 md:w-10/12 lg:w-6/12 mx-auto">
-          <form onSubmit={handleAddEquipment}>
+        <div className="add_equipment_form w-11/12 md:w-10/12 lg:w-6/12 mx-auto relative">
+          <form onSubmit={handleAddEquipment} className='z-10'>
             <div className="input-group mb-4">
               <input name='equipmentName' type="text" placeholder='Equipment Name *' className='input input-bordered w-full dark:bg-darklight' />
             </div>

@@ -8,7 +8,7 @@ const ProductSection = () => {
   const { allEquipment } = useContext(shopContext)
 
   return (
-    <div id='product_section'>
+    <div id='product_section' className='my-20'>
       <div className="container">
         <div className="display_products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allEquipment.length > 0 && allEquipment.map((equipment) => {
