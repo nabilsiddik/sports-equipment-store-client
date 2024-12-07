@@ -24,8 +24,8 @@ const ProductCard = ({ equipment }) => {
 
     return (
         <div id='product_card'>
-            <div className="card card-compact bg-base-100 shadow-xl h-[570px]">
-                <figure className='h-[570px]'>
+            <div className="card card-compact bg-base-100 dark:bg-darklight shadow-xl">
+                <figure>
                     <img src={equipmentImageUrl ? equipmentImageUrl : 'https://placehold.co/600x400'} />
                 </figure>
                 <div className="card-body">

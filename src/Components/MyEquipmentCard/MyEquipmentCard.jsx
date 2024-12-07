@@ -90,7 +90,7 @@ const MyEquipmentCard = ({ equipment }) => {
 
     return (
         <div id='my_equipment_card'>
-            <div className="card card-compact bg-base-100 h-[570px] shadow-lg">
+            <div className="card card-compact bg-base-100 dark:bg-darklight shadow-lg">
                 <figure className='h-full w-full relative'>
                     <img className='w-full h-full object-cover' src={equipmentImageUrl ? equipmentImageUrl : 'https://placehold.co/600x400'} />
                 </figure>

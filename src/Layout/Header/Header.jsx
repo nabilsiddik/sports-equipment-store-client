@@ -4,10 +4,14 @@ import { authContext } from '../../Context/AuthContex/AuthContext';
 import './header.css'
 import Swal from 'sweetalert2';
 import { FiShoppingCart } from "react-icons/fi";
+import { shopContext } from '../../Context/ShopContext/ShopContext';
+import { MdDarkMode } from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
 
 const Header = () => {
 
     const { user, userSignOut } = useContext(authContext)
+    const { darkMode, setDarkMode } = useContext(shopContext)
 
     const handleSignOut = () => {
         userSignOut()
@@ -31,7 +35,7 @@ const Header = () => {
     }
 
     return (
-        <header id='header' className='border-b'>
+        <header id='header' className='border-b dark:bg-dark dark:text-white'>
             <div className="container flex flex-col gap-5 lg:flex-row items-center justify-between py-5">
                 <div className="logo_and_serach flex items-center gap-5">
                     <h2 className='font-bold text-4xl'>EquiSports</h2>
@@ -41,7 +45,7 @@ const Header = () => {
                     <ul className='flex items-center gap-5 text-lg'>
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/sports-equipment'>Sports Equipment</NavLink>
-                        {user?.email && 
+                        {user?.email &&
                             <>
                                 <NavLink to='/add-equipment'>Add Equipment</NavLink>
                                 <NavLink to='/my-equipment'>My Equipment</NavLink>
@@ -62,6 +66,11 @@ const Header = () => {
                             </div>
                         </div>
                     }
+
+                    <div className="dark_light_mode flex items-center gap-3 text-3xl ml-5">
+                        <MdDarkMode onClick={() => setDarkMode(true)} className='cursor-pointer'/>
+                        <MdLightMode onClick={() => setDarkMode(false)}  className='cursor-pointer'/>
+                    </div>
                 </div>
             </div>
         </header>

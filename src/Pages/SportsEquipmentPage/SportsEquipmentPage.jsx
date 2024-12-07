@@ -23,7 +23,7 @@ const SportsEquipmentPage = () => {
         <div className="display_all_equipment">
           <table className="table table-lg">
             <thead>
-              <tr className='text-black text-lg bg-green-600'>
+              <tr className='text-black text-lg bg-green-600 dark:bg-darklight dark:text-white'>
                 <th>Name/Price</th>
                 <th>Stock/Rating</th>
                 <th>Category</th>
@@ -43,7 +43,7 @@ const SportsEquipmentPage = () => {
                   equipmentProcessingTime,
                   equipmentQuantity
                 } = item
-                return <tr key={item._id} className='bg-yellow-500 text-black'>
+                return <tr key={item._id} className='bg-yellow-500 text-black dark:bg-darklight dark:text-white'>
                   <td>
                     <div className="flex items-center gap-3">
                       <div className="avatar">

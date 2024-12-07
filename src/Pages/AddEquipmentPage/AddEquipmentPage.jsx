@@ -97,35 +97,35 @@ const AddEquipmentPage = () => {
         <div className="add_equipment_form w-11/12 md:w-10/12 lg:w-6/12 mx-auto">
           <form onSubmit={handleAddEquipment}>
             <div className="input-group mb-4">
-              <input name='equipmentName' type="text" placeholder='Equipment Name *' className='input input-bordered w-full' />
+              <input name='equipmentName' type="text" placeholder='Equipment Name *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <div className="input-group mb-4">
-              <input name='equipmentImageUrl' type="text" placeholder='Equipment Image URL *' className='input input-bordered w-full' />
+              <input name='equipmentImageUrl' type="text" placeholder='Equipment Image URL *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <div className="input-group mb-4">
-              <input name='equipmentCategory' type="text" placeholder='Equipment Category Name *' className='input input-bordered w-full' />
+              <input name='equipmentCategory' type="text" placeholder='Equipment Category Name *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <div className="input-group mb-4">
-              <textarea name='equipmentDescription' placeholder='Equipment Description *' className='textarea input-bordered textarea-lg w-full'></textarea>
+              <textarea name='equipmentDescription' placeholder='Equipment Description *' className='textarea input-bordered textarea-lg w-full dark:bg-darklight'></textarea>
             </div>
 
             <div className="input-group mb-4">
-              <input name='equipmentPrice' type="number" placeholder='Equipment Price *' className='input input-bordered w-full' />
+              <input name='equipmentPrice' type="number" placeholder='Equipment Price *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <div className="input-group mb-4">
-              <input name='equipmentRating' type="number" placeholder='Equipment Rating *' className='input input-bordered w-full' />
+              <input name='equipmentRating' type="number" placeholder='Equipment Rating *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <div className="input-group mb-4">
-              <input name='equipmentProcessingTime' type="number" placeholder='Processing Time (In Days) *' className='input input-bordered w-full' />
+              <input name='equipmentProcessingTime' type="number" placeholder='Processing Time (In Days) *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <div className="input-group mb-4">
-              <input name='equipmentQuantity' type="number" placeholder='Equipment Quantity *' className='input input-bordered w-full' />
+              <input name='equipmentQuantity' type="number" placeholder='Equipment Quantity *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <input type="submit" className='btn btn-lg bg-yellow-500 font-bold text-xl w-full' value={'Add Equipment'} />

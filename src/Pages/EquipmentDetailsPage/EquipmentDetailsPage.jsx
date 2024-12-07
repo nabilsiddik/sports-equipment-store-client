@@ -20,7 +20,7 @@ const EquipmentDetailsPage = () => {
     return (
         <div id='equipment_details_page'>
             <div className="container py-10">
-                <div className="card bg-base-100">
+                <div className="card bg-base-100 dark:bg-darklight shadow-md">
                     <figure className='h-[600px] relative'>
                         <img className='w-full h-full object-cover'
                             src={equipmentImageUrl}

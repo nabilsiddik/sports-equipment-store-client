@@ -5,6 +5,20 @@ export const shopContext = createContext(null)
 const ShopContext = ({children}) => {
 
   const [allEquipment, setAllEquipment] = useState([])
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  })
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      root.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode]);
 
 
   // Short Description
@@ -28,7 +42,9 @@ const ShopContext = ({children}) => {
   const shopContextValue = {
     allEquipment,
     setAllEquipment,
-    shortDescription
+    shortDescription,
+    darkMode,
+    setDarkMode
   }
 
   return (
