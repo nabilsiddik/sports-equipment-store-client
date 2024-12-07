@@ -28,7 +28,7 @@ const RegistrationPage = () => {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Please enter a valid password"
+                text: "Please enter a valid password. Password must have At least one uppercase, one lowercase, length minimum 6"
             })
         } else {
             createUser(email, password, name, photoUrl)

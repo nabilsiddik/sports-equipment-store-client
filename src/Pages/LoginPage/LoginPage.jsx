@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { FaGoogle } from "react-icons/fa6";
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Context/AuthContex/AuthContext';
 
 const LoginPage = () => {
 
     const { signInWithGoogle, signIn } = useContext(authContext)
+  
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -15,11 +16,10 @@ const LoginPage = () => {
         const password = form.password.value
         signIn(email, password)
             .then((result) => {
-
+                // Update last login time to database
                 const lastSignInTime = result?.user?.metadata?.lastSignInTime
                 const loginInfo = {email, lastSignInTime}
 
-                // Update last login time to database
                 fetch('http://localhost:5000/users', {
                     method: 'PATCH',
                     headers: {
