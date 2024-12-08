@@ -25,7 +25,7 @@ const MyEquipmentCard = ({ equipment, currentUserEquipment, setCurrentUserEquipm
 
     const { shortDescription } = useContext(shopContext)
 
-    
+
 
     const handleDeleteEquipment = (id) => {
 
@@ -46,16 +46,17 @@ const MyEquipmentCard = ({ equipment, currentUserEquipment, setCurrentUserEquipm
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                
+
                 // Delete from database if confirmed
 
-                fetch(`http://localhost:5000/equipment/${id}`, {
+                fetch(`https://sports-equipment-store-server-sigma.vercel.app/equipment/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data, data.deletedCount)
                         if (data.deletedCount > 0) {
+
                             Swal.fire({
                                 position: "center",
                                 icon: "success",
@@ -67,7 +68,12 @@ const MyEquipmentCard = ({ equipment, currentUserEquipment, setCurrentUserEquipm
                             const remainingEquipment = currentUserEquipment.filter((equipment) => equipment._id !== id)
                             setCurrentUserEquipment(allEquipment)
 
-                        }else {
+
+                            setAllEquipment(prevState =>
+                                prevState.filter((equipment) => equipment._id !== id)
+                            )
+
+                        } else {
                             Swal.fire({
                                 position: "center",
                                 icon: "error",

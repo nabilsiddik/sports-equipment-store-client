@@ -7,7 +7,7 @@ import { authContext } from '../../Context/AuthContex/AuthContext';
 const LoginPage = () => {
 
     const { signInWithGoogle, signIn } = useContext(authContext)
-  
+
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -18,22 +18,22 @@ const LoginPage = () => {
             .then((result) => {
                 // Update last login time to database
                 const lastSignInTime = result?.user?.metadata?.lastSignInTime
-                const loginInfo = {email, lastSignInTime}
+                const loginInfo = { email, lastSignInTime }
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://sports-equipment-store-server-sigma.vercel.app/users', {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'
                     },
                     body: JSON.stringify(loginInfo)
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log('SignIn info updated in db', data)
-                })
-                .catch(error => {
-                    console.log(error.code, error.message)
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log('SignIn info updated in db', data)
+                    })
+                    .catch(error => {
+                        console.log(error.code, error.message)
+                    })
 
                 Swal.fire({
                     position: "center center",
@@ -80,7 +80,7 @@ const LoginPage = () => {
                                     </label>
                                     <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                                     <label className="label block">
-                                         Don't have na account? <Link className='underline' to="/registration">Register Now</Link>
+                                        Don't have na account? <Link className='underline' to="/registration">Register Now</Link>
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">

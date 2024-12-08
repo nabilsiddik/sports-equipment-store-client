@@ -7,7 +7,7 @@ import { shopContext } from '../../Context/ShopContext/ShopContext'
 
 const SportsCategorySection = () => {
 
-    const { allEquipment } = useContext(shopContext)
+    const { allEquipment, setAllEquipment } = useContext(shopContext)
 
     return (
         <div id='sports_category' className='my-20 '>

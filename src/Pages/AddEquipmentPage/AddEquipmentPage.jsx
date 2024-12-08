@@ -8,6 +8,7 @@ import { shopContext } from '../../Context/ShopContext/ShopContext';
 const AddEquipmentPage = () => {
 
   const { user } = useContext(authContext)
+  const { setAllEquipment } = useContext(shopContext)
 
   const handleAddEquipment = (e) => {
     e.preventDefault()
@@ -61,7 +62,7 @@ const AddEquipmentPage = () => {
     } else {
 
       // Send equipment data to database
-      fetch('http://localhost:5000/equipment', {
+      fetch('https://sports-equipment-store-server-sigma.vercel.app/equipment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -71,6 +72,9 @@ const AddEquipmentPage = () => {
         .then(res => res.json())
         .then(data => {
           if (data.insertedId) {
+
+            setAllEquipment((prevEquipment) => [...prevEquipment, newEquipment])
+
             Swal.fire({
               position: "center",
               icon: "success",
@@ -110,12 +114,7 @@ const AddEquipmentPage = () => {
             </div>
 
             <div className="input-group mb-4">
-              <select name="equipmentCategory" className='select select-bordered w-full'>
-                <option value="football">Football</option>
-                <option value="cricket">Cricket</option>
-                <option value="hokey">Hokey</option>
-                <option value="carrom">Carrom</option>
-              </select>
+              <input name='equipmentCategory' type="text" placeholder='Equipment Category *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <div className="input-group mb-4">

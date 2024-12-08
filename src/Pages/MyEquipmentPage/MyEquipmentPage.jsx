@@ -11,7 +11,7 @@ const MyEquipmentPage = () => {
 
   // Get current user equipment
   useEffect(() => {
-    fetch('http://localhost:5000/equipment-by-email', {
+    fetch('https://sports-equipment-store-server-sigma.vercel.app/equipment-by-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const MyEquipmentPage = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {currentUserEquipment.length > 0 && currentUserEquipment.map((equipment) => {
-            return <MyEquipmentCard key={equipment._id} equipment={equipment} currentUserEquipment = {currentUserEquipment} setCurrentUserEquipment = {setCurrentUserEquipment} />
+            return <MyEquipmentCard key={equipment._id} equipment={equipment} currentUserEquipment={currentUserEquipment} setCurrentUserEquipment={setCurrentUserEquipment} />
           })}
         </div>
       </div>

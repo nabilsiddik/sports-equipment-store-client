@@ -36,9 +36,9 @@ const RegistrationPage = () => {
                     console.log(userCredential.user)
                     const createdAt = userCredential?.user?.metadata?.creationTime
                     const newUser = { name, photoUrl, email, password, createdAt }
-                    
+
                     // Save new user info to the databas
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://sports-equipment-store-server-sigma.vercel.app/users', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

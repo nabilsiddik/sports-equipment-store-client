@@ -48,7 +48,7 @@ const UpdateEquipment = () => {
         }
 
         // Update to database
-        fetch(`http://localhost:5000/equipment/${_id}`, {
+        fetch(`https://sports-equipment-store-server-sigma.vercel.app/equipment/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

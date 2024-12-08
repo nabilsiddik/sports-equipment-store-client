@@ -19,50 +19,50 @@ import CategoryPage from './Pages/CategoryPage/CategoryPage';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout/>,
-    errorElement: <ErrorPage/>,
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
-        element: <Home/>
+        element: <Home />
       },
       {
         path: '/sports-equipment',
-        element: <SportsEquipmentPage/>
+        element: <SportsEquipmentPage />
       },
       {
         path: 'equipment-details/:id',
         element: <PrivateRoute>
-          <EquipmentDetailsPage/>
+          <EquipmentDetailsPage />
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/equipment/${params.id}`)
+        loader: ({ params }) => fetch(`https://sports-equipment-store-server-sigma.vercel.app/equipment/${params.id}`)
       },
       {
         path: '/add-equipment',
         element: <PrivateRoute>
-          <AddEquipmentPage/>
+          <AddEquipmentPage />
         </PrivateRoute>
       },
       {
         path: '/my-equipment',
         element: <PrivateRoute>
-          <MyEquipmentPage/>
+          <MyEquipmentPage />
         </PrivateRoute>
       },
       {
         path: '/update-equipment/:id',
         element: <PrivateRoute>
-          <UpdateEquipment/>
+          <UpdateEquipment />
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/equipment/${params.id}`)
+        loader: ({ params }) => fetch(`https://sports-equipment-store-server-sigma.vercel.app/equipment/${params.id}`)
       },
       {
         path: '/registration',
-        element: <RegistrationPage/>
+        element: <RegistrationPage />
       },
       {
         path: '/login',
-        element: <LoginPage/>
+        element: <LoginPage />
       }
     ]
   }
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <AuthContext>
     <ShopContext>
-      <RouterProvider router = {router}></RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </ShopContext>
   </AuthContext>,
 )

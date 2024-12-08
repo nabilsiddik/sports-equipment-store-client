@@ -30,7 +30,7 @@ const ShopContext = ({ children }) => {
 
   // Fetch all equipment
   useEffect(() => {
-    fetch('http://localhost:5000/equipment')
+    fetch('https://sports-equipment-store-server-sigma.vercel.app/equipment')
       .then(res => res.json())
       .then(data => {
         setAllEquipment(data)
@@ -38,20 +38,20 @@ const ShopContext = ({ children }) => {
       .catch(error => {
         console.log(error.message)
       })
-  }, [allEquipment])
+  }, [])
 
 
 
   // fetch limit number of data
   const limitNumberOfData = (limit) => {
-    fetch(`http://localhost:5000/equipment?limit=${limit}`)
-    .then(res => res.json())
-    .then(data => {
-      setLimitNumberOfEquipment(data)
-    })
-    .catch(error => {
-      console.log(error.message)
-    })
+    fetch(`https://sports-equipment-store-server-sigma.vercel.app/equipment?limit=${limit}`)
+      .then(res => res.json())
+      .then(data => {
+        setLimitNumberOfEquipment(data)
+      })
+      .catch(error => {
+        console.log(error.message)
+      })
   }
 
 
