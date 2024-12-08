@@ -31,7 +31,7 @@ const UpdateEquipment = () => {
         const equipmentDescription = form.equipmentDescription.value
         const equipmentPrice = form.equipmentPrice.value
         const equipmentRating = form.equipmentRating.value
-        const customization = form.customization.value
+        const equipmentCustomization = form.customization.value
         const equipmentProcessingTime = form.equipmentProcessingTime.value
         const equipmentQuantity = form.equipmentQuantity.value
 
@@ -42,7 +42,7 @@ const UpdateEquipment = () => {
             equipmentDescription,
             equipmentPrice,
             equipmentRating,
-            customization,
+            equipmentCustomization,
             equipmentProcessingTime,
             equipmentQuantity
         }
@@ -83,8 +83,8 @@ const UpdateEquipment = () => {
     }
 
     return (
-        <div id='update_equipment'>
-            <div className="container py-10">
+        <div id='update_equipment' className='py-10'>
+            <div className="container">
                 <h1 className='font-bold text-3xl text-center mb-5'>Update Equipment</h1>
 
                 <div className="add_equipment_form w-11/12 md:w-10/12 lg:w-6/12 mx-auto">
@@ -126,7 +126,7 @@ const UpdateEquipment = () => {
                             <input name='equipmentQuantity' type="number" placeholder='Equipment Quantity *' className='input input-bordered w-full' defaultValue={equipmentQuantity} />
                         </div>
 
-                        <input type="submit" className='btn btn-lg bg-yellow-500 font-bold text-xl w-full' value={'Add Equipment'} />
+                        <input type="submit" className='btn btn-lg bg-yellow-500 font-bold text-xl w-full' value={'Update Equipment'} />
                     </form>
                 </div>
             </div>

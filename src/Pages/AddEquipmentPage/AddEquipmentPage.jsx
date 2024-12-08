@@ -40,6 +40,8 @@ const AddEquipmentPage = () => {
       userName
     }
 
+    console.log(newEquipment)
+
     if (equipmentName === '' || equipmentImageUrl === '' || equipmentCategory === '' || equipmentDescription === '' || equipmentPrice === '' || equipmentRating === '' || customization === '' || equipmentProcessingTime === '' || equipmentQuantity === '') {
       Swal.fire({
         position: "center",
@@ -108,7 +110,12 @@ const AddEquipmentPage = () => {
             </div>
 
             <div className="input-group mb-4">
-              <input name='equipmentCategory' type="text" placeholder='Equipment Category Name *' className='input input-bordered w-full dark:bg-darklight' />
+              <select name="equipmentCategory" className='select select-bordered w-full'>
+                <option value="football">Football</option>
+                <option value="cricket">Cricket</option>
+                <option value="hokey">Hokey</option>
+                <option value="carrom">Carrom</option>
+              </select>
             </div>
 
             <div className="input-group mb-4">

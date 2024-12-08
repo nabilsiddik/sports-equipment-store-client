@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { Fade } from "react-awesome-reveal";
 
-const MyEquipmentCard = ({ equipment }) => {
+const MyEquipmentCard = ({ equipment, currentUserEquipment, setCurrentUserEquipment }) => {
 
     const { user } = useContext(authContext)
     const { allEquipment, setAllEquipment } = useContext(shopContext)
@@ -25,9 +25,9 @@ const MyEquipmentCard = ({ equipment }) => {
 
     const { shortDescription } = useContext(shopContext)
 
+    
+
     const handleDeleteEquipment = (id) => {
-        const remainingEquipment = allEquipment.filter((equipment) => equipment._id !== id)
-        setAllEquipment([...remainingEquipment])
 
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
@@ -48,6 +48,7 @@ const MyEquipmentCard = ({ equipment }) => {
             if (result.isConfirmed) {
                 
                 // Delete from database if confirmed
+
                 fetch(`http://localhost:5000/equipment/${id}`, {
                     method: 'DELETE'
                 })
@@ -63,8 +64,10 @@ const MyEquipmentCard = ({ equipment }) => {
                                 timer: 1500
                             })
 
+                            const remainingEquipment = currentUserEquipment.filter((equipment) => equipment._id !== id)
+                            setCurrentUserEquipment(allEquipment)
+
                         }else {
-                            setAllEquipment((prev) => [...prev, equipment]);
                             Swal.fire({
                                 position: "center",
                                 icon: "error",
@@ -75,7 +78,6 @@ const MyEquipmentCard = ({ equipment }) => {
                         }
                     })
                     .catch(error => {
-                        setAllEquipment((prev) => [...prev, equipment]);
                         Swal.fire({
                             position: "center",
                             icon: "error",
@@ -85,14 +87,12 @@ const MyEquipmentCard = ({ equipment }) => {
                         })
                     })
 
-            } else if (
-                result.dismiss === Swal.DismissReason.cancel
-            ) {
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
                 swalWithBootstrapButtons.fire({
                     title: "Cancelled",
                     text: "Your Equipment is alive",
                     icon: "error"
-                });
+                })
             }
         });
 

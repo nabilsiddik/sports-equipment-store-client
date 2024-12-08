@@ -38,7 +38,7 @@ const ShopContext = ({ children }) => {
       .catch(error => {
         console.log(error.message)
       })
-  }, [])
+  }, [allEquipment])
 
 
 

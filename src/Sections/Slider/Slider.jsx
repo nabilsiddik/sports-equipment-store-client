@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 const Slider = () => {
 
     return (
-        <div className="carousel w-full">
-            <div id="slide1" className="carousel-item relative w-full h-[900px]">
+        <div className="carousel w-full  h-[700px] md:h-[900px]">
+            <div id="slide1" className="carousel-item relative w-full">
                 <img
                     src={slide1}
                     className="w-full h-full object-cover" />
@@ -18,10 +18,10 @@ const Slider = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.7]"></div>
 
                 <div className="slider-content absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-                    <h1 className='font-bold text-5xl text-white text-center'>We Have Various Kind of <br /> Cricket Equipments</h1>
+                    <h1 className='font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center'>We Have Various Kind of <br /> Cricket Equipments</h1>
                     <p className='mt-5 text-lg text-white font-bold text-center w-full md:w-8/12 lg:w-6/12 mx-auto'>Browse our cricket equipments</p>
                     <Link to='sports-equipment'>
-                        <button className='btn btn-lg mt-5 block mx-auto bg-[transparent] text-white border-3 border-yellow-500 font-bold hover:bg-yellow-500'>Browse Now</button>
+                        <button className='btn md:btn-lg mt-5 block mx-auto bg-[transparent] text-white border-3 border-yellow-500 font-bold hover:bg-yellow-500'>Browse Now</button>
                     </Link>
                 </div>
 
@@ -32,7 +32,7 @@ const Slider = () => {
             </div>
 
 
-            <div id="slide2" className="carousel-item relative w-full h-[900px]">
+            <div id="slide2" className="carousel-item relative w-full">
 
                 <img
                     src={slide2}
@@ -41,7 +41,7 @@ const Slider = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.4]"></div>
 
                 <div className="slider-content absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-                    <h1 className='font-bold text-5xl text-white text-center'>We Have Various Kind of <br /> Sports Equipments</h1>
+                    <h1 className='font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center'>We Have Various Kind of <br /> Sports Equipments</h1>
                     <p className='mt-5 text-lg text-white font-bold text-center w-full md:w-8/12 lg:w-6/12 mx-auto'>Browse our sports equipments</p>
                     <Link to='sports-equipment'>
                         <button className='btn btn-lg mt-5 block mx-auto bg-[transparent] text-white border-3 border-yellow-500 font-bold hover:bg-yellow-500'>Browse Now</button>
@@ -54,7 +54,7 @@ const Slider = () => {
             </div>
 
 
-            <div id="slide3" className="carousel-item relative w-full h-[900px]">
+            <div id="slide3" className="carousel-item relative w-full">
                 <img
                     src={slide3}
                     className="w-full h-full object-cover" />
@@ -62,7 +62,7 @@ const Slider = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.4]"></div>
 
                 <div className="slider-content absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-                    <h1 className='font-bold text-5xl text-white text-center'>We Have Various Kind of <br /> sports Equipments</h1>
+                    <h1 className='font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white text-center'>We Have Various Kind of <br /> sports Equipments</h1>
                     <p className='mt-5 text-lg text-white font-bold text-center w-full md:w-8/12 lg:w-6/12 mx-auto'>Browse our sports equipments</p>
                     <Link to='sports-equipment'>
                         <button className='btn btn-lg mt-5 block mx-auto bg-[transparent] text-white border-3 border-yellow-500 font-bold hover:bg-yellow-500'>Browse Now</button>

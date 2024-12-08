@@ -25,7 +25,7 @@ const MyEquipmentPage = () => {
       .catch(error => {
         console.log(error.message)
       })
-  }, [])
+  }, [currentUserEquipment, setCurrentUserEquipment])
 
   return (
     <div id='my_equipment_page'>
@@ -35,7 +35,7 @@ const MyEquipmentPage = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {currentUserEquipment.length > 0 && currentUserEquipment.map((equipment) => {
-            return <MyEquipmentCard key={equipment._id} equipment={equipment} />
+            return <MyEquipmentCard key={equipment._id} equipment={equipment} currentUserEquipment = {currentUserEquipment} setCurrentUserEquipment = {setCurrentUserEquipment} />
           })}
         </div>
       </div>
