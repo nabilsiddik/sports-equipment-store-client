@@ -14,6 +14,7 @@ import ShopContext from './Context/ShopContext/ShopContext';
 import EquipmentDetailsPage from './Pages/EquipmentDetailsPage/EquipmentDetailsPage';
 import UpdateEquipment from './Components/UpdateEquipment/UpdateEquipment';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import CategoryPage from './Pages/CategoryPage/CategoryPage';
 
 const router = createBrowserRouter([
   {

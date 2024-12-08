@@ -95,8 +95,8 @@ const AddEquipmentPage = () => {
   }
 
   return (
-    <div id='add_equipment_page'>
-      <div className="container py-10">
+    <div id='add_equipment_page' className='py-10'>
+      <div className="container">
         <h1 className='font-bold text-3xl text-center mb-5'>Add Equipment</h1>
 
         <div className="add_equipment_form w-11/12 md:w-10/12 lg:w-6/12 mx-auto relative">

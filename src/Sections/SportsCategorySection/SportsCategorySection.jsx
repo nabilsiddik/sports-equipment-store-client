@@ -1,32 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Heading from '../../Components/Heading/Heading'
 import Lottie from "lottie-react"
 import newsletter from '../../assets/lotties/football-team.json'
 import { Link } from 'react-router-dom'
+import { shopContext } from '../../Context/ShopContext/ShopContext'
 
 const SportsCategorySection = () => {
+
+    const { allEquipment } = useContext(shopContext)
+
     return (
-        <div id='sports_category' className='my-20'>
-            <div className="container">
-                <div className="category_container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 shadow-lg gap-20 p-10 rounded-lg bg-yellow-500">
-                    <Link to='category'>
-                        <div className="category_box">
-                            <Lottie animationData={newsletter} />
-                            <h3 className='font-bold text-center text-3xl'>Football</h3>
-                        </div>
-                    </Link>
-                    <div className="category_box">
-                        <Lottie animationData={newsletter} />
-                        <h3 className='font-bold text-center text-3xl'>Cricket</h3>
-                    </div>
-                    <div className="category_box">
-                        <Lottie animationData={newsletter} />
-                        <h3 className='font-bold text-center text-3xl'>Hokey</h3>
-                    </div>
-                    <div className="category_box">
-                        <Lottie animationData={newsletter} />
-                        <h3 className='font-bold text-center text-3xl'>Carrom</h3>
-                    </div>
+        <div id='sports_category' className='my-20 '>
+            <Heading title="All Sports Categories"></Heading>
+            <div className="container rounded-lg">
+                <div className='bg-yellow-500 p-10 rounded-lg h-[600px] overflow-auto'>
+                    <ul>
+                        {allEquipment.length > 0 && allEquipment.map((item) => {
+                            return <li className="category_box bg-yellow-600 py-5 px-10 mb-3 rounded-lg">
+                                <h3 className='font-bold text-3xl'>{item.equipmentCategory}</h3>
+                            </li>
+                        })}
+                    </ul>
                 </div>
             </div>
         </div>
