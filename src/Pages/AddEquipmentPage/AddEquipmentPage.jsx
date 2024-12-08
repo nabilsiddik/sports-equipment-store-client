@@ -20,6 +20,7 @@ const AddEquipmentPage = () => {
     const equipmentDescription = form.equipmentDescription.value
     const equipmentPrice = form.equipmentPrice.value
     const equipmentRating = form.equipmentRating.value
+    const customization = form.customization.value
     const equipmentProcessingTime = form.equipmentProcessingTime.value
     const equipmentQuantity = form.equipmentQuantity.value
     const userEmail = user?.email
@@ -32,13 +33,14 @@ const AddEquipmentPage = () => {
       equipmentDescription,
       equipmentPrice,
       equipmentRating,
+      customization,
       equipmentProcessingTime,
       equipmentQuantity,
       userEmail,
       userName
     }
 
-    if (equipmentName === '' || equipmentImageUrl === '' || equipmentCategory === '' || equipmentDescription === '' || equipmentPrice === '' || equipmentRating === '' || equipmentProcessingTime === '' || equipmentQuantity === '') {
+    if (equipmentName === '' || equipmentImageUrl === '' || equipmentCategory === '' || equipmentDescription === '' || equipmentPrice === '' || equipmentRating === '' || customization === '' || equipmentProcessingTime === '' || equipmentQuantity === '') {
       Swal.fire({
         position: "center",
         icon: "error",
@@ -119,6 +121,10 @@ const AddEquipmentPage = () => {
 
             <div className="input-group mb-4">
               <input name='equipmentRating' type="number" placeholder='Equipment Rating *' className='input input-bordered w-full dark:bg-darklight' />
+            </div>
+
+            <div className="input-group mb-4">
+              <input name='customization' type="text" placeholder='Customization *' className='input input-bordered w-full dark:bg-darklight' />
             </div>
 
             <div className="input-group mb-4">

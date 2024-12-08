@@ -14,6 +14,7 @@ const UpdateEquipment = () => {
         equipmentDescription,
         equipmentPrice,
         equipmentRating,
+        customization,
         equipmentProcessingTime,
         equipmentQuantity
     } = loadedEquipment
@@ -30,6 +31,7 @@ const UpdateEquipment = () => {
         const equipmentDescription = form.equipmentDescription.value
         const equipmentPrice = form.equipmentPrice.value
         const equipmentRating = form.equipmentRating.value
+        const customization = form.customization.value
         const equipmentProcessingTime = form.equipmentProcessingTime.value
         const equipmentQuantity = form.equipmentQuantity.value
 
@@ -40,6 +42,7 @@ const UpdateEquipment = () => {
             equipmentDescription,
             equipmentPrice,
             equipmentRating,
+            customization,
             equipmentProcessingTime,
             equipmentQuantity
         }
@@ -108,6 +111,11 @@ const UpdateEquipment = () => {
 
                         <div className="input-group mb-4">
                             <input name='equipmentRating' type="number" placeholder='Equipment Rating *' className='input input-bordered w-full' defaultValue={equipmentRating} />
+                        </div>
+
+
+                        <div className="input-group mb-4">
+                            <input name='customization' type="text" placeholder='Customization *' className='input input-bordered w-full dark:bg-darklight' defaultValue={customization} />
                         </div>
 
                         <div className="input-group mb-4">

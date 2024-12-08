@@ -6,10 +6,8 @@ const Home = () => {
 
   return (
     <div id='home_page' className=''>
-      <div className="container py-10">
-        {/* <Slider/> */}
-        <ProductSection/>
-      </div>
+      <Slider/>
+      <ProductSection/>
     </div>
   )
 }

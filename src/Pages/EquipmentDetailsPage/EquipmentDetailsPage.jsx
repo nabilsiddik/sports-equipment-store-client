@@ -14,8 +14,11 @@ const EquipmentDetailsPage = () => {
         equipmentPrice,
         equipmentRating,
         equipmentProcessingTime,
-        equipmentQuantity
+        equipmentQuantity,
+        customization
     } = loadedEquipment
+
+    console.log(customization)
 
     return (
         <div id='equipment_details_page'>
@@ -55,6 +58,7 @@ const EquipmentDetailsPage = () => {
 
                         <div className="card-actions mt-8">
                             <div className="badge badge-outline">Proccessing Time: {equipmentProcessingTime} Days</div>
+                            <div className="badge badge-outline">Customization: {customization}</div>
                         </div>
                     </div>
                 </div>
